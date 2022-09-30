@@ -6,8 +6,9 @@ install:
   - go get github.com/gohugoio/hugo
 
 script: 
-  - mkdir -p themes/beautifulhugo && git clone git@github.com:halogenica/beautifulhugo.git themes/beautifulhugo 
-  - hugo --theme beautifulhugo
+  - mkdir themes
+  - cd themes
+  - git submodule add https://github.com/halogenica/beautifulhugo.git beautifulhugo
 
 deploy:
   provider: pages
