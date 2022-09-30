@@ -3,8 +3,11 @@ go:
   - 1.19.x
 
 install:
-  - go get gopkg.in/jdkato/prose.v2
-
+  - mkdir $HOME/src
+  - cd $HOME/src 
+  - git clone https://github.com/gohugoio/hugo.git
+  - cd hugo
+  - go install --tags extended
 script: 
   - mkdir themes
   - cd themes
