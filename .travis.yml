@@ -3,7 +3,7 @@ go:
   - 1.19.x
 
 install:
-  - go get github.com/gohugoio/hugo
+  - go get gopkg.in/jdkato/prose.v2
 
 script: 
   - mkdir themes
