@@ -1,0 +1,21 @@
+language: go
+go: 
+  - 1.19.x
+
+install:
+  - mkdir $HOME/src
+  - cd $HOME/src 
+  - git clone https://github.com/gohugoio/hugo.git
+  - cd hugo
+  - go install --tags extended
+script: 
+  - mkdir themes
+  - cd themes
+  - git submodule add https://github.com/halogenica/beautifulhugo.git beautifulhugo
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  GitHub_token: $GITHUB_TOKEN
+  on:
+    branch: master
